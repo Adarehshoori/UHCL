@@ -1,0 +1,47 @@
+<div class="headers">
+    <a id="homeheader" onclick="location.href = `/`">Home</a>
+    <a id="savedheader" onclick="location.href = `/saved`">Saved</a>
+    <a id="recommendedheader" onclick="location.href = `/recommended`">Recommended</a>
+</div>
+
+<div class="headersright">
+    <a id="logoutheader" onclick="logout()"><strong>Logout</strong></a>
+    <a id="registerheader" onclick="location.href = `/register`">Register</a>
+    <a id="loginheader" onclick="location.href = `/login`">Login</a>
+</div>
+
+<script>
+    if (document.title == "Home") {
+        document.getElementById("homeheader").classList.add('active');
+    } else if (document.title == "History") {
+            document.getElementById("historyheader").classList.add('active');
+    } else if (document.title == "Saved") {
+            document.getElementById("savedheader").classList.add('active');
+    } else if (document.title == "Recommended") {
+            document.getElementById("recommendedheader").classList.add('active');
+    } else if (document.title == "Login") {
+            document.getElementById("loginheader").classList.add('active');
+    } else if (document.title == "Register") {
+            document.getElementById("registerheader").classList.add('active');
+    }
+
+    var logoutbutton = document.getElementById("logoutheader");
+    if (sessionStorage.length == 0) {
+        logoutbutton.hidden = true;
+    }
+
+    var registerbutton = document.getElementById("registerheader");
+    var loginbutton = document.getElementById("loginheader");
+    if (sessionStorage.length != 0) {
+        registerbutton.hidden = true;
+        loginbutton.hidden = true;
+    }
+
+    function logout() {
+        sessionStorage.clear();
+        window.location.replace('/');
+    }
+    
+    logoutbutton.title = "Welcome, " + sessionStorage.getItem("username")
+
+</script>

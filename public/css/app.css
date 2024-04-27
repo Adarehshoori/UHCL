@@ -1,0 +1,745 @@
+/* I realize how long this is now. I will definitely change later when I have time. */
+
+body {
+    background-color: ghostwhite;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 55px;
+}
+
+#mainbody {
+	max-width: 100%;
+	margin: auto;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.pagetitle {
+    text-align: center;
+    margin: 15px;
+}
+
+.TitleText {
+    margin-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-bottom: -5px;
+}
+
+
+#searchbox {
+    font-size: 18px;
+    text-align: center;
+    width: 300px;
+    border-radius: 5px;
+}
+
+#searchdiv {
+    margin: auto;
+    text-align: center;
+}
+
+#searchbutton {
+    margin-top: 5px;
+    padding: 3px 60px 3px 60px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+	transition: 0.2s;
+}
+
+#searchbutton:hover {
+	cursor: pointer;
+	background-color: rgb(221, 220, 220);
+}
+
+.submit_btn {
+	font-size: 18px;
+    border-radius: 5px;
+    padding: 3px 20px 3px 20px;
+	margin: auto;
+	justify-content: center;
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	transition: 0.2s;
+}
+
+.submit_btn:hover {
+	cursor: pointer;
+	background-color: rgb(221, 220, 220);
+	font-weight: 700;
+}
+
+.refresh_btn {
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 3px 20px 3px 20px;
+	margin: auto;
+	justify-content: center;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	transition: 0.2s;
+}
+
+.refresh_btn:hover {
+	cursor: pointer;
+	background-color: rgb(221, 220, 220);
+	font-weight: 700;
+}
+
+.delete_all_shows {
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 3px 20px 3px 20px;
+	margin: auto;
+	justify-content: center;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	transition: 0.2s;
+}
+
+.delete_all_shows:hover {
+	cursor: pointer;
+	background-color: rgb(217, 0, 0);
+	color: rgb(255, 255, 255);
+	font-weight: 700;
+}
+
+/* All the info inside the bordered box */
+#results {
+	padding-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 100%);
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+    max-width: 1000px;
+}
+
+/* Distance between each ShowBox */
+.BorderClass {
+	margin: 7px;
+	border: 2px solid rgb(187, 187, 187);
+	border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+#listitems {
+	float: left;
+	text-align: left;
+	margin-left: -14px;
+	line-height: 1.45;
+	margin-right: 5px;
+	margin-bottom: 55px;
+}
+
+.FlagBox {
+	width: 24px;
+	height: 14px;
+    margin-top: 3px;
+	vertical-align: top;
+	margin-left: 5px;
+	filter: drop-shadow(1px 1px 0px rgb(75, 75, 75));
+}
+
+.WebChannelBox {
+	width: auto;
+	height: 14px;
+    margin-top: 3px;
+	vertical-align: top;
+	margin-left: 3px;
+	filter: drop-shadow(1px 1px 0px rgb(75, 75, 75));
+}
+
+.SummaryText {
+	font-style: oblique;
+	margin-top: 19px;
+	margin-bottom: -5px;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 14px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.SummaryText:hover {
+    transform: scale(1.03);
+}
+
+.TopText {
+	margin-bottom: 10px;
+	margin-left: 70px;
+	margin-right: auto;
+	text-align: center;
+}
+
+.IMGBox {
+	height: auto;
+	max-width: 93%;
+	text-align: center;
+	border-radius: 8px;
+	margin-top: 10px;
+	cursor: pointer;
+    transition: 0.15s;
+}
+
+.IMGBox:hover {
+    transform: scale(1.03);
+}
+
+.ratingtext {
+	margin-top: 0px;
+	margin-bottom: -10px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.starstext {
+	margin-top: 6px;
+    margin-bottom: -5px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.IMGBox:hover {
+	filter: drop-shadow(3px 3px 5px rgb(70, 70, 70));
+	transition: 0.10s;
+}
+
+.popularbadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: red;
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(128, 21, 21));
+	display: inline-block;
+}
+
+.newbadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: blue;
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(21, 23, 128));
+	display: inline-block;
+}
+
+.classicbadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: rgb(147, 18, 147);
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(76, 13, 100));
+	display: inline-block;
+}
+
+.topratedbadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: green;
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(9, 82, 13));
+	display: inline-block;
+}
+
+.mustwatchbadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: teal;
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(5, 59, 61));
+	display: inline-block;
+}
+
+.funnybadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: rgb(230, 135, 26);
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(100, 53, 0));
+	display: inline-block;
+}
+
+.scarybadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: rgb(48, 48, 48);
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(0, 0, 0));
+	display: inline-block;
+}
+
+.kidfriendlybadge {
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 17px;
+	margin-bottom: -5px;
+	width: fit-content;
+	text-align: center;
+	background-color: rgb(255, 0, 187);
+	color: white;
+	border-radius: 8px;
+	filter: drop-shadow(2px 2px 4px rgb(74, 9, 82));
+	display: inline-block;
+}
+
+.savebtn {
+	padding: 12px 16px;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	color: rgb(0, 0, 0);
+	background-color: rgb(187, 187, 187);
+	border: none;
+	border-radius: 5px;
+	display: flex;
+    align-items: center;
+  	justify-content: center;
+	margin: auto;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: 0.2s;
+}
+  
+.savebtn:hover {
+	background-color: rgb(11, 164, 0);
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+}
+
+.delbtn {
+	padding: 12px 16px;
+	font-size: 15px;
+	font-weight:600;
+	cursor: pointer;
+	color: rgb(0, 0, 0);
+	background-color: rgb(187, 187, 187);
+	border: none;
+	border-radius: 5px;
+	display: flex;
+    align-items: center;
+  	justify-content: center;
+	margin: auto;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: 0.2s;
+}
+
+.delbtn:hover {
+	background-color: rgb(217, 0, 0);
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+}
+
+.numofresults {
+    font-size: 18px;
+    text-align: center;
+    margin: 0px;
+}
+
+#idresults {
+    text-align: center;
+    margin: auto;
+}
+
+.inputInfo {
+    width: 350px;
+	font-size: 16px;
+}
+
+#submitButton {
+    text-align: center;
+}
+
+/* --- HEADERS --- */
+
+.headers {
+    display: inline-block;
+    cursor: pointer;
+    background-color: silver;
+    border-radius: 5px;
+}
+
+.headers a {
+    color: black;
+    float: left;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+.headers a.active {
+    background-color: rgb(70, 70, 70);
+    color: white;
+    border-radius: 5px;
+}
+
+.headers a:hover:not(.active) {
+    background-color: rgb(221, 220, 220);
+    border-radius: 5px;
+}
+
+
+.headersright {
+    float: right;
+    cursor: pointer;
+    background-color: silver;
+    border-radius: 5px;
+}
+
+.headersright a {
+    color: black;
+    float: left;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+.headersright a.active {
+    background-color: rgb(70, 70, 70);
+    color: white;
+    border-radius: 5px;
+}
+
+.headersright a:hover:not(.active) {
+    background-color: rgb(221, 220, 220);
+    border-radius: 5px;
+}
+
+#logoutheader:hover {
+	text-decoration: underline;
+}
+
+/* --- FOOTERS --- */
+
+.footers {
+    cursor: pointer;
+    border-radius: 5px;
+    bottom: 10px;
+    top: 5px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footers a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.footers a.active {
+    background-color: rgb(70, 70, 70);
+    color: white;
+    border-radius: 5px;
+}
+
+.footers a:hover:not(.active) {
+    background-color: rgb(221, 220, 220);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
+#linkedinlogo {
+    width: 19px;
+    height: 19px;
+    position: relative;
+    top: 4px;
+    left: 3px;
+    mix-blend-mode: multiply;
+}
+
+#tvmazefooter {
+    float: right;
+}
+
+
+/* --- SORT DROPDOWN --- */
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #acc9ee;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 5px;
+    position: absolute;
+    top: -35px;
+    width: 95px;
+}
+  
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    right: -87%;
+}
+  
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 110px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+  /* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+}
+  
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #cce4ee;
+}
+
+.nightmode {
+    cursor: pointer;
+    font-size: 30px;
+    float: right;
+    margin-right: 10px;
+    transition: transform .7s ease-in-out, scale 0.20s;
+}
+
+.nightmode:hover {
+    filter: drop-shadow(0px 0px 5px rgb(85, 85, 85));
+    filter: contrast(1.1) brightness(1.05) saturate(1.05);
+    scale: 1.25;
+    transform: rotate(270deg);
+}
+
+
+.alert {
+	padding: 20px;
+	background-color: #36f485;
+	color: rgb(0, 0, 0);
+	z-index: 10;
+    position: fixed;
+    width: 90%;
+  	height:20px;
+  	left:50%;
+  	transform:translateX(-50%);
+  	bottom: 10px;
+	border-radius: 10px;
+	font-size: 18px;
+	visibility: hidden;
+	max-width: 1000px;
+}
+
+.duplicate {
+	padding: 20px;
+	background-color: #f43636;
+	color: rgb(0, 0, 0);
+	z-index: 10;
+    position: fixed;
+    width: 90%;
+  	height:20px;
+  	left:50%;
+  	transform:translateX(-50%);
+  	bottom: 10px;
+	border-radius: 10px;
+	font-size: 18px;
+	visibility: hidden;
+	max-width: 1000px;
+}
+
+.error {
+	padding: 20px;
+	background-color: #f43636;
+	color: rgb(0, 0, 0);
+	z-index: 10;
+    position: fixed;
+    width: 90%;
+  	height:20px;
+  	left:50%;
+  	transform:translateX(-50%);
+  	bottom: 10px;
+	border-radius: 10px;
+	font-size: 18px;
+	visibility: hidden;
+	max-width: 1000px;
+}
+  
+.closebtn {
+	margin-left: 15px;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	float: right;
+	font-size: 32px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+  
+
+/* For optimal mobile viewing */
+@media (min-width: 550px) and (max-width: 749px) {
+	#mainbody {
+		max-width: 75%;
+	}
+	.accordion {
+		width: 365px;
+	}
+	.panel {
+		width: 350px;
+	}
+	#results {
+		grid-template-columns: repeat(auto-fill, 50%);
+	}
+	.modal-content {
+		width: 65%;
+	}
+}
+
+/* For optimal tablet viewing */
+@media (min-width: 750px) and (max-width: 999px) {
+	#mainbody {
+		max-width: 75%;
+	}
+	.accordion {
+		width: 365px;
+	}
+	.panel {
+		width: 350px;
+	}
+	#results {
+		grid-template-columns: repeat(auto-fill, 33%);
+	}
+	.modal-content {
+		width: 65%;
+	}
+}
+
+/* For optimal laptop/desktop viewing */
+@media (min-width: 1000px) {
+	#mainbody {
+		max-width: 1000px;
+	}
+	.accordion {
+		width: 365px;
+	}
+	.panel {
+		width: 350px;
+	}
+	#results {
+		grid-template-columns: repeat(auto-fill, 25%);
+	}
+	.modal-content {
+		width: 850px;
+	}
+}
+
