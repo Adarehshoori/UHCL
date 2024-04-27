@@ -141,7 +141,7 @@ async function main_algorithm(top_genres, top_language) {
         }
         // If it does find those favorite genres, assign it 0.35 points, otherwise 0.25 points. Not an amazing system, but it works for now.
         if (my_genre_found == true) {
-            show_score += 0.35;
+            show_score += 0.33;
         } else {
             show_score += 0.26;
         }
@@ -155,7 +155,7 @@ async function main_algorithm(top_genres, top_language) {
 
         // Gets language of show, and appends score to our cummulative total score.
         if (top_language.includes(result.language)) {
-            show_score += 0.25;
+            show_score += 0.22;
         } else {
             show_score += 0.17;
         }
@@ -164,7 +164,7 @@ async function main_algorithm(top_genres, top_language) {
         if (result.weight) {
             show_score += (result.weight / 100) * 0.15;
         } else {
-            show_score += (0.0075);
+            show_score += (0.07);
         }
 
         show_score = show_score.toFixed(3);
@@ -192,7 +192,7 @@ async function main_algorithm(top_genres, top_language) {
 
     // Only renders those shows that had above a 0.9 score.
     for (var k = 0; k < show_arr.length; k++) {
-        if (arr[k] >= 0.9) {
+        if (arr[k] >= 0.87) {
             final_show_arr.push(show_arr[k]);
             final_scores_arr.push(arr[k]);
         }
