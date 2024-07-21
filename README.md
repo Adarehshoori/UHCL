@@ -1,6 +1,6 @@
 # TV Show Search & Recommendation Site
 
-Website taken down to due high cloud costs. Video presentation below
+Website no longer live due to high cloud costs. Video presentation below
 ------------------------------
 https://www.youtube.com/watch?v=t5hgugOXylI
 
